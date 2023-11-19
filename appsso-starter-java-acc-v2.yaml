@@ -1,0 +1,220 @@
+metadata:
+  namespace: default
+  annotations:
+    accelerator.apps.tanzu.vmware.com/icon: data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAxNiAxNiI+PHBvbHlnb24gcG9pbnRzPSI3LjQyNCAwLjIyIDcuNDI0IDAuOTI1IDIuNjEgMy4yNDMgMi4wNTcgMi44MDMgNy40MjQgMC4yMiIgZmlsbD0iIzAwYzFkNSIvPjxwb2x5Z29uIHBvaW50cz0iMTMuNzgyIDIuODAzIDEzLjIzIDMuMjQzIDguNDE2IDAuOTI1IDguNDE2IDAuMjIgMTMuNzgyIDIuODAzIiBmaWxsPSIjMDBjMWQ1Ii8+PHBvbHlnb24gcG9pbnRzPSIxNS41MjIgOC40ODggMTQuODcgOC40ODggMTMuODUgNC4wMTggMTQuNDAxIDMuNTggMTUuNTIyIDguNDg4IiBmaWxsPSIjMWQ0MjhhIi8+PHBvbHlnb24gcG9pbnRzPSIxLjk5IDQuMDE4IDAuODAxIDkuMjI4IDAuMTEzIDkuMzg2IDEuNDM5IDMuNTggMS45OSA0LjAxOCIgZmlsbD0iIzFkNDI4YSIvPjxwb2x5Z29uIHBvaW50cz0iNC4zNTMgMTQuMzc0IDQuMDQ3IDE1LjAxIDAuMzM0IDEwLjM1NCAxLjAyMSAxMC4xOTYgNC4zNTMgMTQuMzc0IiBmaWxsPSIjNzhiZTIwIi8+PHBvbHlnb24gcG9pbnRzPSI1LjI0OCAxNC44MDYgNy45ODIgMTQuODA2IDcuOTgyIDE1LjQ0MSA0Ljk0MiAxNS40NDEgNS4yNDggMTQuODA2IiBmaWxsPSIjMDBjMWQ1Ii8+PHBhdGggZD0iTTExLjQ1NiwxMS42di0uMDY0bTEuMDA1LTEuMjIxSDEyLjQzTTEwLjksMTIuMjM2aDB2MFptLjU1OC0uNjM2di0uMDY0IiBmaWxsPSJub25lIi8+PHBvbHlnb24gcG9pbnRzPSIxMy42OTEgOC40ODggMTMuMDM5IDguNDg4IDEyLjMgNS4yNSAxMi4zIDUuMjUgMTIuMTc2IDQuNzA4IDExLjY4NCA0LjQ3MSA4LjQxNiAyLjg5NyA3LjkyIDIuNjU4IDcuNDI0IDIuODk3IDQuMTU2IDQuNDcxIDMuNjYzIDQuNzA4IDMuNTQgNS4yNSAyLjczNCA4Ljc4MiAyLjYxMiA5LjMxNCAyLjk1OSA5Ljc0OSA1LjIxNiAxMi41NzkgNS41NTggMTMuMDA3IDcuOTgyIDEzLjAwNyA3Ljk4MiAxMy42NDMgNS4yNTIgMTMuNjQzIDQuOTEgMTMuMjE1IDIuMjczIDkuOTA3IDEuOTI0IDkuNDcxIDIuMDQ2IDguOTQxIDIuOTg4IDQuODExIDMuMTEyIDQuMjY5IDMuNjA0IDQuMDMyIDcuNDI0IDIuMTkyIDcuOTIgMS45NTMgOC40MTYgMi4xOTIgMTIuMjM2IDQuMDMyIDEyLjcyOCA0LjI2OSAxMi44NTIgNC44MTEgMTMuNjkxIDguNDg4IiBmaWxsPSIjMDA5MWRhIi8+PHBhdGggZD0iTTE0LjEwNywxMi4wNjRoLS41NTZ2LS43M2gtMi4xdi43M0g5LjE3NFYxNS4wNWg0LjYxN3YuNzNoMi4xVjEzLjY4NWgtMi4xdi43M0g5LjgwOVYxMi43aDEuNjQ3di43M2gyLjF2LS42MTloLS4wMDVsLjAwNS0uMDA3di0uMWgyLjMzNlY5LjY3OUgxMS4yNjl2LS43M2gtMi4xdjIuMWgyLjF2LS43MjloMy45ODJ2MS43NDlIMTQuMTQybS0zLjUwOC0xLjY1NUg5LjgwOVY5LjU4NGguODI1Wm0zLjc5MiwzLjkxMWguODI1di44MjVoLS44MjVaTTEwLjksMTIuMjM2aDBsMCwwWm0yLjAxNi41NTloLS44MjVWMTEuOTdoLjgyNVoiIGZpbGw9IiMxZDQyOGEiLz48cG9seWdvbiBwb2ludHM9IjEwLjkgMTIuMjMzIDEwLjkgMTIuMjM2IDEwLjg5OCAxMi4yMzYgMTAuOSAxMi4yMzMiIGZpbGw9IiMxZDQyOGEiLz48cGF0aCBkPSJNMTMuNTQ2LDEyLjgxMWguMDA1VjEyLjhaIiBmaWxsPSIjMWQ0MjhhIi8+PC9zdmc+
+  name: appsso-starter-java
+  title: AppSSO Starter Java
+  description: Spring Boot application that supports single sign-on (SSO) via Spring Security OAuth 2 Client library.
+  tags:
+    - sso
+    - authentication
+    - openid
+    - spring
+    - java
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+spec:
+  type: service
+  parameters:
+    - definitions: {}
+      title: Configure accelerator
+      properties:
+        projectName:
+          title: Name
+          description: Provide a name for your new project
+          type: string
+          default: appsso-starter-java
+        appssoOfferingName:
+          title: AppSSO Offering name
+          description: To find the available AppSSO service in your cluster, run `tanzu services classes list`.
+          type: string
+        includeBuildToolWrapper:
+          title: Include Build Tool wrapper support
+          type: boolean
+          default: true
+          ui:widget: checkbox
+      required:
+        - projectName
+        - appssoOfferingName
+      dependencies: {}
+      ui:order:
+        - projectName
+        - appssoOfferingName
+        - includeBuildToolWrapper
+    - title: Git repository
+      properties:
+        _createGitRepo:
+          title: Create a new repository to store the newly generated project?
+          type: boolean
+          defaultValue: false
+      dependencies:
+        _createGitRepo:
+          oneOf:
+            - properties:
+                _createGitRepo:
+                  enum:
+                    - false
+            - properties:
+                _createGitRepo:
+                  enum:
+                    - true
+                bsGitRepository:
+                  title: Repository Location
+                  type: string
+                  ui:field: RepoUrlPicker
+                  ui:options:
+                    requestUserCredentials:
+                      secretsKey: USER_OAUTH_TOKEN
+                      additionalScopes:
+                        github:
+                          - workflow
+                    allowedHosts:
+                      - github.com
+                bsGitBranch:
+                  title: Default Branch
+                  type: string
+                  default: main
+                repoVisibility:
+                  tile: Repo Visibility
+                  type: string
+                  enum:
+                    - private
+                    - internal
+                    - public
+                  enumNames:
+                    - Private
+                    - Internal
+                    - Public
+                  default: private
+                  ui:widget: select
+    - title: Backstage Config
+      properties:
+        _registerComponent:
+          title: Should this entity be auto registered in the portal
+          type: boolean
+          defaultValue: false
+      dependencies:
+        _registerComponent:
+          oneOf:
+            - properties:
+                _registerComponent:
+                  enum:
+                    - false
+            - properties:
+                _registerComponent:
+                  enum:
+                    - true
+                owner:
+                  title: Owner
+                  type: string
+                  description: Owner of the component
+                  ui:field: OwnerPicker
+                  ui:options:
+                    allowedKinds:
+                      - Group
+                system:
+                  title: System
+                  type: string
+                  description: System the component belongs to
+                  ui:field: OwnedEntityPicker
+                  ui:options:
+                    allowedKinds:
+                      - System
+                    defaultKind: System
+                lifecycle:
+                  title: Lifecycle
+                  type: string
+                  enum:
+                    - experimental
+                    - production
+                    - deprecated
+                  enumNames:
+                    - Experimental
+                    - Production
+                    - Deprecated
+                  default: experimental
+                  ui:widget: select
+  steps:
+    - id: fetch-accelerator
+      name: Fetch accelerator and fragments
+      action: vmware:accelerator-fetch-flux
+      input:
+        accelerator:
+          appsso-starter-java:
+            tarball: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/accelerator-system/appsso-starter-java-acc-dxth2/3126bca920626f5dee01e630e48e8e5cce2675d03b68a715452dc25b94320b93.tar.gz
+        fragments:
+          build-wrapper-gradle:
+            tarball: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/accelerator-system/build-wrapper-gradle-frag-mlfxp/16e94db5d608d793e25c75eb761707d732e1fff7105be83949ff4ba11bf864fb.tar.gz
+          tap-workload:
+            tarball: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/accelerator-system/tap-workload-frag-w8dd7/f17ac7f6efca5cdeaf27c98420afda15fd424e67821e215ca736911f266f731f.tar.gz
+    - id: invoke-accelerator
+      name: Invoke accelerator engine
+      action: vmware:accelerator-invoke
+      input:
+        options: ${{ parameters }}
+        versions: ${{steps['fetch-accelerator'].output.versions}}
+    - id: populate-amr
+      name: Record Accelerator Invocation in AMR
+      action: vmware:populate-amr
+      if: ${{ not parameters['_explore'] }}
+      input:
+        provenance: ${{steps["invoke-accelerator"].output.provenance}}
+    - id: create-component-yaml
+      action: catalog:write
+      if: ${{ parameters['_registerComponent'] }}
+      name: Create Catalog Info YAML
+      input:
+        filePath: result/auto-generated-catalog-info.yaml
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.projectName }}
+            annotations:
+              backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=${{ parameters.projectName }}
+              backstage.io/techdocs-ref: dir:.
+              github.com/project-slug: ${{ parameters.bsGitRepository | projectSlug }}
+              grafana/dashboard-selector: ${{ parameters.projectName }}
+              janus-idp.io/tekton: ${{ parameters.projectName }}
+          spec:
+            type: service
+            system: ${{ parameters.system }}
+            lifecycle: ${{ parameters.lifecycle }}
+            owner: ${{ parameters.owner }}
+    - id: create-repo-github
+      name: Create github repo
+      if: ${{ not parameters['_explore'] and parameters['_createGitRepo'] and (parameters.bsGitRepository.startsWith('github.com')) }}
+      action: publish:github
+      input:
+        repoUrl: ${{ parameters.bsGitRepository }}
+        token: ${{ secrets.USER_OAUTH_TOKEN }}
+        defaultBranch: ${{ parameters.bsGitBranch }}
+        sourcePath: result
+        repoVisibility: ${{ parameters.repoVisibility }}
+    - id: publish-zip
+      name: zip files from accelerator and make them available to download
+      action: vmware:publish-zip
+      input:
+        root-dir: ${{ parameters.projectName }}/
+        source-dir: result
+    - id: register
+      if: ${{ not parameters['_explore'] and parameters['_registerComponent'] and parameters['_createGitRepo'] }}
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['create-repo-github'].output.repoContentsUrl }}
+        catalogInfoPath: /auto-generated-catalog-info.yaml
+        optional: true
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['create-repo-github'].output.remoteUrl }}
+      - title: Get zip file
+        url: data:application/zip;base64,${{ steps["publish-zip"].output.file }}
+        download: ${{ parameters.projectName }}.zip
+        acceleratorName: appsso-starter-java
+        createdGitRepo: ${{ parameters["_createGitRepo"] }}
+        uuid: ${{steps["invoke-accelerator"].output.provenance.id}}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}

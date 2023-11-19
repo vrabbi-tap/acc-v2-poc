@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Location
+metadata:
+  name: acc-v2-templates
+  description: Update Accelerators with more features
+spec:
+  targets:
+    - ./tanzu-java-web-app-acc-v2.yaml
+    - ./spring-streaming-app-acc-v2.yaml
+    - ./tap-initialize-acc-v2.yaml
+    - ./java-server-side-ui-acc-v2.yaml
+    - ./spring-cloud-serverless-acc-v2.yaml
+    - ./spring-smtp-gateway-acc-v2.yaml
+    - ./csharp-weatherforecast-acc-v2.yaml
+    - ./react-frontend-acc-v2.yaml
+    - ./node-express-acc-v2.yaml
+    - ./appsso-starter-java-acc-v2.yaml
+    - ./java-rest-service-acc-v2.yaml
+    - ./where-for-dinner-acc-v2.yaml
+    - ./angular-frontend-acc-v2.yaml
+    - ./csharp-rest-service-acc-v2.yaml

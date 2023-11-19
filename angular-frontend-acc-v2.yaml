@@ -1,0 +1,255 @@
+metadata:
+  namespace: default
+  annotations:
+    accelerator.apps.tanzu.vmware.com/icon: data:image/png;base64,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
+  name: angular-frontend
+  title: Angular Frontend
+  description: Angular Single Page Application with client side rendered web UI. Application provides Service to interact with backend API's.
+  tags:
+    - angular
+    - web
+    - tanzu
+    - typescript
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+spec:
+  type: service
+  parameters:
+    - definitions: {}
+      title: Configure accelerator
+      properties:
+        projectName:
+          title: Name
+          description: Provide a name for your new project
+          type: string
+          default: angular-frontend
+        artifactId:
+          title: Application artifact name
+          type: string
+          default: angular-frontend
+        backendService:
+          title: Hostname of the backend services app. If backend services are deployed to the same cluster then a local route can be used (e.g. <backend-app>.<namespace>).
+          type: string
+          default: customer-profile-backend.namespace
+        useSingleSignOn:
+          title: Single Sign-on. If this is checked, 'authority', 'clientId', and 'scope' are required fields, and can easily be changed later.
+          type: boolean
+          default: false
+          ui:widget: checkbox
+      required:
+        - projectName
+        - artifactId
+        - backendService
+      dependencies:
+        useSingleSignOn:
+          oneOf:
+            - properties:
+                useSingleSignOn:
+                  const: true
+                authority:
+                  title: Authority Url
+                  description: The url of your single sign-on `AuthServer`. If you are unsure, you can see what the `AuthServers` available in your cluster are by running `kubectl get authserver -A` in your Kubernetes cluster and choose the url for the Authserver you want to connect to.
+                  type: string
+                authorityLabelKey:
+                  title: Authority Label Key
+                  description: A unique label key by which to select your desired `AuthServer`. If you are unsure, run `kubectl label --list authserver/<name-of-authserver> --namespace <authserver-workspace>`
+                  type: string
+                authorityLabelValue:
+                  title: Authority Label Value
+                  description: A unique label value by which to select your desired `AuthServer`. If you are unsure, run `kubectl label --list authserver/<name-of-authserver> --namespace <authserver-workspace>`
+                  type: string
+                namespace:
+                  title: Namespace
+                  description: The namespace where you are planning to deploy your Angular app. If you don't know yet, remember to change this value in the `auth.config.json` later.
+                  type: string
+                  default: <your-namespace>
+              required: []
+            - properties:
+                useSingleSignOn:
+                  not:
+                    anyOf:
+                      - const: true
+      ui:order:
+        - projectName
+        - artifactId
+        - backendService
+        - useSingleSignOn
+        - authority
+        - authorityLabelKey
+        - authorityLabelValue
+        - namespace
+    - title: Git repository
+      properties:
+        _createGitRepo:
+          title: Create a new repository to store the newly generated project?
+          type: boolean
+          defaultValue: false
+      dependencies:
+        _createGitRepo:
+          oneOf:
+            - properties:
+                _createGitRepo:
+                  enum:
+                    - false
+            - properties:
+                _createGitRepo:
+                  enum:
+                    - true
+                bsGitRepository:
+                  title: Repository Location
+                  type: string
+                  ui:field: RepoUrlPicker
+                  ui:options:
+                    requestUserCredentials:
+                      secretsKey: USER_OAUTH_TOKEN
+                      additionalScopes:
+                        github:
+                          - workflow
+                    allowedHosts:
+                      - github.com
+                bsGitBranch:
+                  title: Default Branch
+                  type: string
+                  default: main
+                repoVisibility:
+                  tile: Repo Visibility
+                  type: string
+                  enum:
+                    - private
+                    - internal
+                    - public
+                  enumNames:
+                    - Private
+                    - Internal
+                    - Public
+                  default: private
+                  ui:widget: select
+    - title: Backstage Config
+      properties:
+        _registerComponent:
+          title: Should this entity be auto registered in the portal
+          type: boolean
+          defaultValue: false
+      dependencies:
+        _registerComponent:
+          oneOf:
+            - properties:
+                _registerComponent:
+                  enum:
+                    - false
+            - properties:
+                _registerComponent:
+                  enum:
+                    - true
+                owner:
+                  title: Owner
+                  type: string
+                  description: Owner of the component
+                  ui:field: OwnerPicker
+                  ui:options:
+                    allowedKinds:
+                      - Group
+                system:
+                  title: System
+                  type: string
+                  description: System the component belongs to
+                  ui:field: OwnedEntityPicker
+                  ui:options:
+                    allowedKinds:
+                      - System
+                    defaultKind: System
+                lifecycle:
+                  title: Lifecycle
+                  type: string
+                  enum:
+                    - experimental
+                    - production
+                    - deprecated
+                  enumNames:
+                    - Experimental
+                    - Production
+                    - Deprecated
+                  default: experimental
+                  ui:widget: select
+  steps:
+    - id: fetch-accelerator
+      name: Fetch accelerator and fragments
+      action: vmware:accelerator-fetch-flux
+      input:
+        accelerator:
+          angular-frontend:
+            tarball: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/accelerator-system/angular-frontend-acc-q4gqr/74651e4d20563b9c74a7b78bf66bcee4e5bb028beab4c902e354fafd5a2f7d44.tar.gz
+        fragments:
+          tap-workload:
+            tarball: http://source-controller-manager-artifact-service.source-system.svc.cluster.local./imagerepository/accelerator-system/tap-workload-frag-w8dd7/f17ac7f6efca5cdeaf27c98420afda15fd424e67821e215ca736911f266f731f.tar.gz
+    - id: invoke-accelerator
+      name: Invoke accelerator engine
+      action: vmware:accelerator-invoke
+      input:
+        options: ${{ parameters }}
+        versions: ${{steps['fetch-accelerator'].output.versions}}
+    - id: populate-amr
+      name: Record Accelerator Invocation in AMR
+      action: vmware:populate-amr
+      if: ${{ not parameters['_explore'] }}
+      input:
+        provenance: ${{steps["invoke-accelerator"].output.provenance}}
+    - id: create-component-yaml
+      action: catalog:write
+      if: ${{ parameters['_registerComponent'] }}
+      name: Create Catalog Info YAML
+      input:
+        filePath: result/auto-generated-catalog-info.yaml
+        entity:
+          apiVersion: backstage.io/v1alpha1
+          kind: Component
+          metadata:
+            name: ${{ parameters.projectName }}
+            annotations:
+              backstage.io/kubernetes-label-selector: app.kubernetes.io/part-of=${{ parameters.projectName }}
+              backstage.io/techdocs-ref: dir:.
+              github.com/project-slug: ${{ parameters.bsGitRepository | projectSlug }}
+              grafana/dashboard-selector: ${{ parameters.projectName }}
+              janus-idp.io/tekton: ${{ parameters.projectName }}
+          spec:
+            type: service
+            system: ${{ parameters.system }}
+            lifecycle: ${{ parameters.lifecycle }}
+            owner: ${{ parameters.owner }}
+    - id: create-repo-github
+      name: Create github repo
+      if: ${{ not parameters['_explore'] and parameters['_createGitRepo'] and (parameters.bsGitRepository.startsWith('github.com')) }}
+      action: publish:github
+      input:
+        repoUrl: ${{ parameters.bsGitRepository }}
+        token: ${{ secrets.USER_OAUTH_TOKEN }}
+        defaultBranch: ${{ parameters.bsGitBranch }}
+        sourcePath: result
+        repoVisibility: ${{ parameters.repoVisibility }}
+    - id: publish-zip
+      name: zip files from accelerator and make them available to download
+      action: vmware:publish-zip
+      input:
+        root-dir: ${{ parameters.projectName }}/
+        source-dir: result
+    - id: register
+      if: ${{ not parameters['_explore'] and parameters['_registerComponent'] and parameters['_createGitRepo'] }}
+      name: Register
+      action: catalog:register
+      input:
+        repoContentsUrl: ${{ steps['create-repo-github'].output.repoContentsUrl }}
+        catalogInfoPath: /auto-generated-catalog-info.yaml
+        optional: true
+  output:
+    links:
+      - title: Repository
+        url: ${{ steps['create-repo-github'].output.remoteUrl }}
+      - title: Get zip file
+        url: data:application/zip;base64,${{ steps["publish-zip"].output.file }}
+        download: ${{ parameters.projectName }}.zip
+        acceleratorName: angular-frontend
+        createdGitRepo: ${{ parameters["_createGitRepo"] }}
+        uuid: ${{steps["invoke-accelerator"].output.provenance.id}}
+      - title: Open in catalog
+        icon: catalog
+        entityRef: ${{ steps['register'].output.entityRef }}
