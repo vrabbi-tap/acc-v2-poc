@@ -1,0 +1,150 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: logging-example
+  title: logging-example
+  description: logging-example
+spec:
+  owner: group:default/tkg-admins
+  type: service
+  parameters:
+    - title: spec
+      properties:
+        claimRef:
+          properties:
+            apiVersion:
+              type: string
+            kind:
+              type: string
+            name:
+              type: string
+            namespace:
+              type: string
+          required:
+          - apiVersion
+          - kind
+          - namespace
+          - name
+          type: object
+        compositionRef:
+          properties:
+            name:
+              type: string
+          required:
+          - name
+          type: object
+        compositionRevisionRef:
+          properties:
+            name:
+              type: string
+          required:
+          - name
+          type: object
+        compositionRevisionSelector:
+          properties:
+            matchLabels:
+              additionalProperties:
+                type: string
+              type: object
+          required:
+          - matchLabels
+          type: object
+        compositionSelector:
+          properties:
+            matchLabels:
+              additionalProperties:
+                type: string
+              type: object
+          required:
+          - matchLabels
+          type: object
+        compositionUpdatePolicy:
+          enum:
+          - Automatic
+          - Manual
+          type: string
+        environmentConfigRefs:
+          items:
+            properties:
+              apiVersion:
+                type: string
+              kind:
+                type: string
+              name:
+                type: string
+            required:
+            - apiVersion
+            - kind
+            type: object
+          type: array
+        name:
+          description: the cluster name to create
+          type: string
+        publishConnectionDetailsTo:
+          properties:
+            configRef:
+              default:
+                name: default
+              properties:
+                name:
+                  type: string
+              type: object
+            metadata:
+              properties:
+                annotations:
+                  additionalProperties:
+                    type: string
+                  type: object
+                labels:
+                  additionalProperties:
+                    type: string
+                  type: object
+                type:
+                  type: string
+              type: object
+            name:
+              type: string
+          required:
+          - name
+          type: object
+        resourceRefs:
+          items:
+            properties:
+              apiVersion:
+                type: string
+              kind:
+                type: string
+              name:
+                type: string
+            required:
+            - apiVersion
+            - kind
+            type: object
+          type: array
+          x-kubernetes-list-type: atomic
+        size:
+          default: small
+          description: the size of the cluster
+          enum:
+          - small
+          - medium
+          - large
+          type: string
+        writeConnectionSecretToRef:
+          properties:
+            name:
+              type: string
+            namespace:
+              type: string
+          required:
+          - name
+          - namespace
+          type: object
+      type: object
+
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: example template
