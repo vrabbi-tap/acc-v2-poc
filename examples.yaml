@@ -43,7 +43,7 @@ spec:
     - id: generate-yaml
       action: roadiehq:utils:fs:append
       input:
-        path: docs/rfcs/${{ parameters.rfcNumber }}/resource.yaml
+        path: resource.yaml
         content: |
           apiVersion: test.terasky.com/v1alpha1
           kind: Database
