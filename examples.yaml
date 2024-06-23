@@ -10,17 +10,21 @@ spec:
   parameters:
     - title: spec
       properties:
-        name:
-          description: the cluster name to create
-          type: string
-        size:
-          default: small
-          description: the size of the cluster
-          enum:
-          - small
-          - medium
-          - large
-          type: string
+        spec:
+          type: object
+          properties:
+            name:
+              description: the cluster name to create
+              type: string
+            size:
+              default: small
+              description: the size of the cluster
+              enum:
+              - small
+              - medium
+              - large
+              type: string
+          type: object
       type: object
     - title: Repository to place document
       properties:
@@ -38,12 +42,12 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: Creating ${{ parameters.name }}/resource.yaml
+        message: Creating ${{ parameters.spec.name }}/resource.yaml
     - id: serialize
       name: Serialize
       action: roadiehq:utils:serialize:json
       input:
-        data: ${{ parameters }}
+        data: ${{ parameters.spec }}
     - id: generate-yaml
       action: roadiehq:utils:fs:write
       input:
@@ -52,16 +56,16 @@ spec:
           apiVersion: test.terasky.com/v1alpha1
           kind: Database
           metadata:
-            name: ${{ parameters.name }}
+            name: ${{ parameters.spec.name }}
           spec: ${{ steps['serialize'].output.serialized }}
     - id: create-pull-request
       name: create-pull-request
       action: publish:github:pull-request
       input:
         repoUrl: ${{ parameters.repoUrl }}
-        branchName: create-${{ parameters.name }}-resource
-        title: DB - ${{ parameters.name }}
-        description: Creat Resource for ${{ parameters.size }}
+        branchName: create-${{ parameters.spec.name }}-resource
+        title: DB - ${{ parameters.spec.name }}
+        description: Creat Resource for ${{ parameters.spec.size }}
 ---
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
