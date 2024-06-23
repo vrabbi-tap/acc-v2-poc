@@ -48,9 +48,8 @@ spec:
           apiVersion: test.terasky.com/v1alpha1
           kind: Database
           metadata:
-            name: ${{ parameters.spec.name }}
-          spec:
-            input: ${{ parameters }}
+            name: ${{ parameters.name }}
+          spec: ${{ parameters }}
     - id: create-pull-request
       name: create-pull-request
       action: publish:github:pull-request
