@@ -58,7 +58,7 @@ spec:
         repoUrl: ${{ parameters.repoUrl }}
         branchName: create-${{ parameters.spec.name }}-resource
         title: DB - ${{ parameters.spec.name }}
-        description: ${{ parameters.spec.size }}
+        description: Creat Resource for ${{ parameters.spec.size }}
 ---
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
