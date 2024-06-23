@@ -39,7 +39,11 @@ spec:
       action: debug:log
       input:
         message: Creating ${{ parameters.name }}/resource.yaml
-
+    - id: serialize
+      name: Serialize
+      action: roadiehq:utils:serialize:json
+      input:
+        data: ${{ parameters }}
     - id: generate-yaml
       action: roadiehq:utils:fs:write
       input:
@@ -49,7 +53,7 @@ spec:
           kind: Database
           metadata:
             name: ${{ parameters.name }}
-          spec: ${{ parameters }}
+          spec: ${{ steps['serialize'].output.serialized }}
     - id: create-pull-request
       name: create-pull-request
       action: publish:github:pull-request
