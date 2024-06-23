@@ -38,13 +38,13 @@ spec:
       name: Log Message
       action: debug:log
       input:
-        message: Creating ${{ parameters.spec.name }}/resource.yaml
+        message: Creating ${{ parameters.name }}/resource.yaml
 
     - id: generate-yaml
-      action: roadiehq:utils:fs:append
+      action: roadiehq:utils:fs:write
       input:
         path: resource.yaml
-        content: |
+        content: >
           apiVersion: test.terasky.com/v1alpha1
           kind: Database
           metadata:
@@ -56,9 +56,9 @@ spec:
       action: publish:github:pull-request
       input:
         repoUrl: ${{ parameters.repoUrl }}
-        branchName: create-${{ parameters.spec.name }}-resource
-        title: DB - ${{ parameters.spec.name }}
-        description: Creat Resource for ${{ parameters.spec.size }}
+        branchName: create-${{ parameters.name }}-resource
+        title: DB - ${{ parameters.name }}
+        description: Creat Resource for ${{ parameters.size }}
 ---
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
