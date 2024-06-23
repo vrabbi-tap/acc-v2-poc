@@ -1,6 +1,68 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
+  name: test
+  title: Create a new test
+  description: Create a new test
+spec:
+  owner: group:default/engineering
+  type: service
+  parameters:
+    - title: spec
+      properties:
+        name:
+          description: the cluster name to create
+          type: string
+        size:
+          default: small
+          description: the size of the cluster
+          enum:
+          - small
+          - medium
+          - large
+          type: string
+      type: object
+    - title: Repository to place document
+      properties:
+        repoUrl:
+          content:
+            type: string
+          description: Name of repository
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: Creating ${{ parameters.spec.name }}/resource.yaml
+
+    - id: generate-yaml
+      action: roadiehq:utils:fs:append
+      input:
+        path: docs/rfcs/${{ parameters.rfcNumber }}/resource.yaml
+        content:
+          apiVersion: test.terasky.com/v1alpha1
+          kind: Database
+          metadata:
+            name: ${{ parameters.spec.name }}
+          spec:
+            input: ${{ parameters }}
+    - id: create-pull-request
+      name: create-pull-request
+      action: publish:github:pull-request
+      input:
+        repoUrl: ${{ parameters.repoUrl }}
+        branchName: create-${{ parameters.spec.name }}-resource
+        title: DB - ${{ parameters.spec.name }}
+        description: ${{ parameters.spec.size }}
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
   name: random-example
   title: random-example
   description: random-example
