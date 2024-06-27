@@ -97,7 +97,6 @@ spec:
               - medium
               - large
               type: string
-          type: object
       type: object
     - title: Repository to place document
       properties:
