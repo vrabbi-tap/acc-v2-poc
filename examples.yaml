@@ -65,7 +65,7 @@ spec:
       name: YTT
       action: kubetopus:ytt:template
       input:
-        targetPath: /home/vrabbi/kubetopus/example-output.yaml
+        targetPath: /example-output.yaml
         dataValuesFromParameters: ${{ parameters }}
         arguments:
          - "-f"
