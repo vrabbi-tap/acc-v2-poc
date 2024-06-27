@@ -1,6 +1,80 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
+  name: ytt
+  title: Create a ytt test
+  description: Create a ytt new test
+spec:
+  owner: group:default/engineering
+  type: service
+  parameters:
+    - title: spec
+      properties:
+        spec:
+          type: object
+          properties:
+            name:
+              description: the cluster name to create
+              type: string
+            size:
+              default: small
+              description: the size of the cluster
+              enum:
+              - small
+              - medium
+              - large
+              type: string
+          type: object
+      type: object
+    - title: Repository to place document
+      properties:
+        repoUrl:
+          content:
+            type: string
+          description: Name of repository
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: Creating ${{ parameters.spec.name }}/resource.yaml
+    - id: serialize
+      name: Serialize
+      action: roadiehq:utils:serialize:json
+      input:
+        data: ${{ parameters }}
+    - id: generate-yaml
+      action: roadiehq:utils:fs:write
+      input:
+        path: resource.yaml
+        content: >
+          #@ a = "test"
+          #@ b = "example"
+          #@ load("@ytt:data", "data")
+          ---
+          apiVersion: test.terasky.com/v1alpha1
+          kind: Database
+          metadata:
+            name: #@ a
+          spec: #@ b
+    - id: ytt
+      name: YTT
+      action: kubetopus:ytt:template
+      input:
+        targetPath: /home/vrabbi/kubetopus/example-output.yaml
+        dataValuesFromParameters: ${{ parameters }}
+        arguments:
+         - "-f"
+         - "resource.yaml"
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
   name: test
   title: Create a new test
   description: Create a new test
