@@ -1,81 +1,9 @@
-apiVersion: scaffolder.backstage.io/v1beta3
-kind: Template
-metadata:
-  name: ytt
-  title: Create a ytt test
-  description: Create a ytt new test
-spec:
-  owner: group:default/engineering
-  type: service
-  parameters:
-    - title: spec
-      properties:
-        spec:
-          type: object
-          properties:
-            name:
-              description: the cluster name to create
-              type: string
-            size:
-              default: small
-              description: the size of the cluster
-              enum:
-              - small
-              - medium
-              - large
-              type: string
-      type: object
-    - title: Repository to place document
-      properties:
-        repoUrl:
-          content:
-            type: string
-          description: Name of repository
-          ui:field: RepoUrlPicker
-          ui:options:
-            allowedHosts:
-              - github.com
-
-  steps:
-    - id: log-message
-      name: Log Message
-      action: debug:log
-      input:
-        message: Creating ${{ parameters.spec.name }}/resource.yaml
-    - id: serialize
-      name: Serialize
-      action: roadiehq:utils:serialize:json
-      input:
-        data: ${{ parameters }}
-    - id: generate-yaml
-      action: roadiehq:utils:fs:write
-      input:
-        path: resource.yaml
-        content: |
-          #@ a = "test"
-          #@ b = "example"
-          #@ load("@ytt:data", "data")
-          ---
-          apiVersion: test.terasky.com/v1alpha1
-          kind: Database
-          metadata:
-            name: #@ a
-          spec: #@ b
-    - id: ytt
-      name: YTT
-      action: kubetopus:ytt:template
-      input:
-        targetPath: /example-output.yaml
-        dataValuesFromParameters: ${{ parameters }}
-        arguments:
-         - "-f"
-         - "resource.yaml"
 ---
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: ytt-wth-values
-  title: Create a ytt test with Values
+  name: ytt-wth-values-inline
+  title: Create a ytt test with Values from inline
   description: Create a ytt new test with values
 spec:
   owner: group:default/engineering
@@ -137,7 +65,148 @@ spec:
       action: kubetopus:ytt:template
       input:
         targetPath: /example-output.yaml
-        dataValuesFromParameters: ${{ parameters }}
+        dataValues: 
+          spec:
+            name: ${{ parameters.spec.name }}
+            size: ${{ parameters.spec.size }}
+          example: demo
+        arguments:
+         - "-f"
+         - "resource.yaml"
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: ytt-wth-values-from-json-string
+  title: Create a ytt test with Values from JSON string
+  description: Create a ytt new test with values
+spec:
+  owner: group:default/engineering
+  type: service
+  parameters:
+    - title: spec
+      properties:
+        spec:
+          type: object
+          properties:
+            name:
+              description: the cluster name to create
+              type: string
+            size:
+              default: small
+              description: the size of the cluster
+              enum:
+              - small
+              - medium
+              - large
+              type: string
+      type: object
+    - title: Repository to place document
+      properties:
+        repoUrl:
+          content:
+            type: string
+          description: Name of repository
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: Creating ${{ parameters.spec.name }}/resource.yaml
+    - id: serialize
+      name: Serialize
+      action: roadiehq:utils:serialize:json
+      input:
+        data: ${{ parameters }}
+    - id: generate-yaml
+      action: roadiehq:utils:fs:write
+      input:
+        path: resource.yaml
+        content: |
+          #@ load("@ytt:data", "data")
+          ---
+          apiVersion: test.terasky.com/v1alpha1
+          kind: Database
+          metadata:
+            name: #@ data.values.spec.name
+          spec: #@ data.values
+    - id: ytt
+      name: YTT
+      action: kubetopus:ytt:template
+      input:
+        targetPath: /example-output.yaml
+        dataValuesJsonString: ${{ steps['serialize'].output.serialized }}
+        arguments:
+         - "-f"
+         - "resource.yaml"
+---
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: ytt-wth-values-from-obj
+  title: Create a ytt test with Values from Object
+  description: Create a ytt new test with values
+spec:
+  owner: group:default/engineering
+  type: service
+  parameters:
+    - title: spec
+      properties:
+        spec:
+          type: object
+          properties:
+            name:
+              description: the cluster name to create
+              type: string
+            size:
+              default: small
+              description: the size of the cluster
+              enum:
+              - small
+              - medium
+              - large
+              type: string
+      type: object
+    - title: Repository to place document
+      properties:
+        repoUrl:
+          content:
+            type: string
+          description: Name of repository
+          ui:field: RepoUrlPicker
+          ui:options:
+            allowedHosts:
+              - github.com
+
+  steps:
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: Creating ${{ parameters.spec.name }}/resource.yaml
+    - id: generate-yaml
+      action: roadiehq:utils:fs:write
+      input:
+        path: resource.yaml
+        content: |
+          #@ load("@ytt:data", "data")
+          ---
+          apiVersion: test.terasky.com/v1alpha1
+          kind: Database
+          metadata:
+            name: #@ data.values.spec.name
+          spec: #@ data.values
+    - id: ytt
+      name: YTT
+      action: kubetopus:ytt:template
+      input:
+        targetPath: /example-output.yaml
+        dataValuesJsonObject: ${{ parameters }}
         arguments:
          - "-f"
          - "resource.yaml"
