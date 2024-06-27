@@ -144,43 +144,6 @@ spec:
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: random-example
-  title: random-example
-  description: random-example
-spec:
-  owner: group:default/tkg-admins
-  type: service
-  parameters:
-    - title: spec
-      properties:
-        name:
-          description: the cluster name to create
-          type: string
-        size:
-          default: small
-          description: the size of the cluster
-          enum:
-          - small
-          - medium
-          - large
-          type: string
-      type: object
-  steps:
-    - id: log-message
-      name: Log Message
-      action: debug:log
-      input:
-        message: example template
-    - action: fetch:plain:file
-      id: fetch-plain-file
-      name: Fetch plain file
-      input:
-        url: https://github.com/backstage/community/tree/main/backstage-community-sessions/assets/Backstage%20Community%20Sessions.png
-        targetPath: target-path
----
-apiVersion: scaffolder.backstage.io/v1beta3
-kind: Template
-metadata:
   name: random-example-to-fail
   title: random-example-to-fail
   description: random-example
