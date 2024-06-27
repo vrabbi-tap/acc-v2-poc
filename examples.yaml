@@ -51,7 +51,7 @@ spec:
       action: roadiehq:utils:fs:write
       input:
         path: resource.yaml
-        content: >
+        content: |
           #@ a = "test"
           #@ b = "example"
           #@ load("@ytt:data", "data")
