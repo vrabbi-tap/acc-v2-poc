@@ -1,0 +1,16 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: example
+  namespace: default
+spec:
+  
+  
+  storageGB: 20
+  test:
+    sub1: testasd
+    subObj:
+      intField: 123
+      strField: asd
+  targetBranch: main
+  repoUrl: github.com?owner=vrabbi-tap&repo=acc-v2-poc
