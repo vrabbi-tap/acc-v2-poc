@@ -1,0 +1,9 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: dsfgdfgdfgee4
+  namespace: dfg
+spec:
+  storageGB: 10
+  test:
+    sub1: test
