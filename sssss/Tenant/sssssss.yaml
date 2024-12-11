@@ -1,0 +1,12 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  name: sssssss
+  namespace: sssss
+spec:
+  parameters:
+    groupObjectIDs: []
+    clusterID: dddddddddd
+    name: ddddddddd
+  targetBranch: main
+  repoUrl: github.com?owner=vrabbi-tap&repo=acc-v2-poc
