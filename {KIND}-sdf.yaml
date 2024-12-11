@@ -1,0 +1,26 @@
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: AppClaim
+metadata:
+  name: sdf
+  namespace: "345"
+spec:
+  parameters:
+    ci:
+      buildImages: true
+      enabled: false
+      runTests: true
+    host: devopstoolkit.live
+    kubernetesProviderConfigName: default
+    namespace: production
+    port: 80
+    repository:
+      enabled: false
+    scaling:
+      enabled: false
+      max: 10
+      min: 1
+    tag: dfg
+    image: dfgdfg
+  id: dfg
+  targetBranch: main
+  repoUrl: github.com?owner=vrabbi-tap&repo=acc-v2-poc
