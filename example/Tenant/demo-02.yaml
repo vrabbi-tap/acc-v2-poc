@@ -1,0 +1,10 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  name: demo-02
+  namespace: example
+spec:
+  parameters:
+    groupObjectIDs: []
+    clusterID: dfg
+    name: dddd
