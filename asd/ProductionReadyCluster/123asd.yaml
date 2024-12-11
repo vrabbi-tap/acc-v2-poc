@@ -1,0 +1,40 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: ProductionReadyCluster
+metadata:
+  name: 123asd
+  namespace: asd
+spec:
+  parameters:
+    advanced:
+      backup:
+        enabled: true
+        mode: velero
+      gpu:
+        enabled: false
+        scaling:
+          maxNodeCount: 5
+          minNodeCount: 1
+      logging:
+        enabled: true
+        mode: logAnalytics
+      monitoring:
+        enabled: true
+      serviceMesh:
+        enablePrivateIngress: false
+        enablePublicIngress: false
+    location: eastus
+    rbac:
+      admin:
+        groupObjectIDs: []
+        userUPNs: []
+      readOnly:
+        groupObjectIDs: []
+        userUPNs: []
+    scaling:
+      maxNodeCount: 10
+      minNodeCount: 3
+    tenants: []
+    nodeSize: small
+  id: "234"
+  targetBranch: main
+  repoUrl: github.com?owner=vrabbi-tap&repo=234234
