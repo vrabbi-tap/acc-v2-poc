@@ -1,0 +1,24 @@
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: AppClaim
+metadata:
+  name: dfg
+  namespace: 345345sdfg
+spec:
+  parameters:
+    ci:
+      buildImages: true
+      enabled: false
+      runTests: true
+    host: devopstoolkit.live
+    kubernetesProviderConfigName: default
+    namespace: production
+    port: 80
+    repository:
+      enabled: false
+    scaling:
+      enabled: false
+      max: 10
+      min: 1
+    image: dfg
+    tag: dfgdfgdfg
+  id: dfg
