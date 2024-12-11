@@ -1,0 +1,12 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  name: dfgdfgdfgdfgdfg
+  namespace: asd
+spec:
+  parameters:
+    groupObjectIDs:
+      - asd
+      - asdasd
+    clusterID: asd
+    name: asd
