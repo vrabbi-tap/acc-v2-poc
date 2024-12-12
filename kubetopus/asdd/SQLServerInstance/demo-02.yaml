@@ -1,0 +1,12 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: demo-02
+  namespace: asdd
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+    subObj:
+      intField: 123
+      strField: asd
