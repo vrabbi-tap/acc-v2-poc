@@ -1,0 +1,15 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: example
+  namespace: demo
+spec:
+  clusters:
+    - spectro-shared
+    - kubetopus
+  storageGB: 10
+  test:
+    sub1: test
+    subObj:
+      intField: 234
+      strField: sdf
