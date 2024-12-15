@@ -1,0 +1,27 @@
+apiVersion: devopstoolkitseries.com/v1alpha1
+kind: AppClaim
+metadata:
+  name: sdf
+  namespace: ddd
+spec:
+  parameters:
+    ci:
+      buildImages: true
+      enabled: true
+      runTests: true
+    host: devopstoolkit.live
+    kubernetesProviderConfigName: default
+    namespace: production
+    port: 80
+    repository:
+      enabled: true
+      name: sdf
+    scaling:
+      enabled: true
+      max: 10
+      min: 1
+    db:
+      secret: 345sdf
+    image: sdfsdf
+    tag: asasfd435
+  id: sdf
