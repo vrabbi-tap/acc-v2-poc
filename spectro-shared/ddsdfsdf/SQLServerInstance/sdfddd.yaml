@@ -1,0 +1,17 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: sdfddd
+  namespace: ddsdfsdf
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+    subObj:
+      intField: 234234
+      strField: sdfsdf
+  compositionSelector:
+    matchLabels:
+      asdas: zxczxc
+  writeConnectionSecretToRef:
+    name: sss
