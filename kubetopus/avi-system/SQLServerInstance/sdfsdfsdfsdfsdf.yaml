@@ -1,0 +1,16 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: sdfsdfsdfsdfsdf
+  namespace: avi-system
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+    subObj:
+      intField: 234
+      strField: sdfsdf
+  compositionSelector:
+    matchLabels: {}
+  writeConnectionSecretToRef:
+    name: sdf
