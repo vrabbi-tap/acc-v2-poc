@@ -1,0 +1,18 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  name: asdaaasss
+  namespace: asd
+spec:
+  xrName: asdaaasss
+  xrNamespace: asd
+  parameters:
+    groupObjectIDs: []
+    clusterID: asd
+    gitops:
+      branch: asd
+    name: asd
+  compositionSelector:
+    matchLabels: {}
+  writeConnectionSecretToRef:
+    name: ddd
