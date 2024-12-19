@@ -1,0 +1,15 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  name: hhggffdd
+  namespace: asd
+spec:
+  xrName: hhggffdd
+  xrNamespace: asd
+  parameters:
+    clusterID: asdasdasdasd
+    gitops:
+      repoUrl: sdfsdf
+    name: sdfsdf
+  writeConnectionSecretToRef:
+    name: sdfsdf
