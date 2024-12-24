@@ -1,0 +1,13 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: ako
+  namespace: default
+  annotations:
+    backstage.io/kubernetes-label-selector: >-
+      app.kubernetes.io/name=ako-default-kubetopus-demo,kapp.k14s.io/app=1717657989677204854,kapp.k14s.io/association=v1.9d6d790b925a71d07371bb343f85f32a
+spec:
+  type: service
+  system: avi-system
+  owner: kubernetes-auto-ingested
+  lifecycle: production
