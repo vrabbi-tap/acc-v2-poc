@@ -1,0 +1,14 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: demo-01
+  namespace: demo
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+  compositionSelector:
+    matchLabels:
+      env: production
+  writeConnectionSecretToRef:
+    name: demo-secret
