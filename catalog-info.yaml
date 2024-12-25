@@ -1,0 +1,30 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: a-sql-example-01
+  namespace: default
+  annotations:
+    kubectl.kubernetes.io/last-applied-configuration: >
+      {"apiVersion":"tap.terasky.com/v1alpha1","kind":"SQLServerInstance","metadata":{"annotations":{},"name":"a-sql-example-01","namespace":"demo"},"spec":{"storageGB":10,"test":{"sub1":"asd","subObj":{"intField":222,"strField":"asd"}}}}
+    terasky.backstage.io/claim-kind: SQLServerInstance
+    terasky.backstage.io/claim-version: v1alpha1
+    terasky.backstage.io/claim-group: tap.terasky.com
+    terasky.backstage.io/claim-plural: sqlserverinstances
+    terasky.backstage.io/crossplane-resource: 'true'
+    terasky.backstage.io/composite-kind: XSQLServerInstance
+    terasky.backstage.io/composite-name: a-sql-example-01-tb94g
+    terasky.backstage.io/composite-group: tap.terasky.com
+    terasky.backstage.io/composite-version: v1alpha1
+    terasky.backstage.io/composite-plural: xsqlserverinstances
+    backstage.io/kubernetes-label-selector: >-
+      crossplane.io/claim-name=a-sql-example-01,crossplane.io/claim-namespace=demo,crossplane.io/composite=a-sql-example-01-tb94g
+    terasky.backstage.io/component-type: crossplane-claim
+  links:
+    - title: Crossplane Visualizer
+      url: >-
+        http://10.100.148.240:8090/claims/tap.terasky.com/v1alpha1/SQLServerInstance/demo/a-sql-example-01
+spec:
+  type: crossplane-claim
+  system: demo
+  owner: kubernetes-auto-ingested
+  lifecycle: production
