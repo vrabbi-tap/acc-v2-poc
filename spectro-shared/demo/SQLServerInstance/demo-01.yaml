@@ -1,0 +1,15 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: demo-01
+  namespace: demo
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+  compositeDeletePolicy: Foreground
+  compositionRef:
+    name: example-02.cp.terasky.com
+  writeConnectionSecretToRef:
+    name: demo-secret
+  compositionUpdatePolicy: Automatic
