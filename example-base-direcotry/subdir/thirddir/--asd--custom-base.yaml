@@ -1,0 +1,14 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: custom-base
+  namespace: asd
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+  writeConnectionSecretToRef:
+    name: asd
+  pushToGit: true
+  manifestLayout: custom
+  basePath: example-base-direcotry/subdir/thirddir
