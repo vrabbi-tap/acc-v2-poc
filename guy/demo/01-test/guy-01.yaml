@@ -1,0 +1,18 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  name: guy-01
+  namespace: demo
+spec:
+  storageGB: 10
+  test:
+    sub1: test
+    subObj:
+      intField: 234234
+      strField: sdfsdf
+  compositeDeletePolicy: Foreground
+  writeConnectionSecretToRef:
+    name: demo-01-secret
+  compositionUpdatePolicy: Automatic
+  compositionRef:
+    name: xsqlserverinstances.tap.terasky.com
