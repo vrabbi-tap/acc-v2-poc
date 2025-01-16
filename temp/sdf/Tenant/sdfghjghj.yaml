@@ -1,0 +1,16 @@
+apiVersion: kubernetes.terasky.com/v1alpha1
+kind: Tenant
+metadata:
+  annotations:
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/allcompany
+    terasky.backstage.io/system: sdf
+  name: sdfghjghj
+  namespace: sdf
+spec:
+  parameters:
+    clusterID: sdf
+    name: sdf
+  compositeDeletePolicy: Background
+  writeConnectionSecretToRef:
+    name: sdf
