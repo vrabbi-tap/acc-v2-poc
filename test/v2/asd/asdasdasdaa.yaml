@@ -1,0 +1,16 @@
+apiVersion: terasky.demo/v1alpha1
+kind: ClusterBackupClaim
+metadata:
+  annotations:
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/all_users
+    terasky.backstage.io/system: asda
+  name: asdasdasdaa
+  namespace: asda
+spec:
+  parameters:
+    awsAccount: asd
+    bucketName: asd
+    cluster: asd
+    region: asd
+  compositeDeletePolicy: Background
