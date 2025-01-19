@@ -2,14 +2,14 @@ apiVersion: terasky.demo/v1alpha1
 kind: ClusterBackupClaim
 metadata:
   annotations:
-    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/add-to-catalog: "true"
     terasky.backstage.io/owner: group:default/guests
     terasky.backstage.io/system: sdf
   name: sdf
   namespace: sdf
 spec:
   parameters:
-    awsAccount: scott
+    awsAccount: scott-demo
     bucketName: demo-clusterbackupstack-01
     cluster: gil-cls-01
     region: us-east-1
