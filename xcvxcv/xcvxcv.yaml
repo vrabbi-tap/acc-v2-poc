@@ -7,6 +7,7 @@ spec:
   parameters:
     ci:
       enabled: false
+      runTests: true
     repository:
       enabled: true
     scaling:
@@ -15,3 +16,4 @@ spec:
     namespace: xcvxcv
     tag: xcvxcv
   compositeDeletePolicy: Background
+  id: jhbjhbjhb
