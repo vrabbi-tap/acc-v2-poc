@@ -1,0 +1,14 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"namespace-scoped","basePath":"demo/SQLServerInstance"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/10root
+    terasky.backstage.io/system: demo
+  name: demo-01
+  namespace: demo
+spec:
+  storageGB: 10
+  compositeDeletePolicy: Background
