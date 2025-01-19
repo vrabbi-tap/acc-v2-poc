@@ -6,7 +6,8 @@ metadata:
 spec:
   parameters:
     ci:
-      enabled: false
+      enabled: true
+      buildImages: true
     repository:
       enabled: true
     scaling:
@@ -15,3 +16,4 @@ spec:
     namespace: xcvxcv
     tag: xcvxcv
   compositeDeletePolicy: Background
+  id: ghvjgv
