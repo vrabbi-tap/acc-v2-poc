@@ -1,0 +1,16 @@
+apiVersion: tap.terasky.com/v1alpha1
+kind: SQLServerInstance
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"namespace-scoped","basePath":"asd/SQLServerInstance"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/guests
+    terasky.backstage.io/system: asd
+    terasky.backstage.io/source-file-url: >-
+      https://github.com/vrabbi-tap/acc-v2-poc/blob/main/asd/SQLServerInstance/demo-03.yaml
+  name: demo-03
+  namespace: asd
+spec:
+  storageGB: 50
+  compositeDeletePolicy: Background
