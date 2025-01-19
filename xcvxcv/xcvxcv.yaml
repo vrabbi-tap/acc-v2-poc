@@ -1,0 +1,17 @@
+apiVersion: devopstoolkit.live/v1alpha1
+kind: AppClaim
+metadata:
+  name: xcvxcv
+  namespace: xcvxcv
+spec:
+  parameters:
+    ci:
+      enabled: false
+    repository:
+      enabled: false
+    scaling:
+      enabled: false
+    image: xcv
+    namespace: xcvxcv
+    tag: xcvxcv
+  compositeDeletePolicy: Background
