@@ -4,12 +4,12 @@ metadata:
   name: guy-01
   namespace: demo
 spec:
-  storageGB: 10
+  storageGB: 20
   test:
-    sub1: test
+    sub1: f
     subObj:
-      intField: 234234
-      strField: sdfsdf
+      intField: 4
+      strField: f
   compositeDeletePolicy: Foreground
   writeConnectionSecretToRef:
     name: demo-01-secret
