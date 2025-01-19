@@ -1,0 +1,18 @@
+apiVersion: terasky.demo/v1alpha1
+kind: ClusterBackupClaim
+metadata:
+  annotations:
+    terasky.backstage.io/add-to-catalog: "true"
+    terasky.backstage.io/owner: group:default/all_users
+    terasky.backstage.io/system: ddd
+    terasky.backstage.io/git-url-of-manifest: "https://github.com/vrabbi-tap/acc-v2\
+      -poc/blob/main/${{ parameters.manifestLayout === 'namespace-scoped' ?
+      parameters.xrNamespace + '/' + steps.generateManifest.input.kind + '/' +
+      steps.generateManifest.output.filePaths[0].split('/').pop() :
+      parameters.manifestLayout === 'custom' ? parameters.basePath + '/' +
+      parameters.xrName + '.yaml' : steps.generateManifest.output.filePaths[0]
+      }}"
+  name: sss
+  namespace: ddd
+spec:
+  compositeDeletePolicy: Background
