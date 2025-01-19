@@ -8,7 +8,7 @@ spec:
     ci:
       enabled: false
     repository:
-      enabled: false
+      enabled: true
     scaling:
       enabled: false
     image: xcv
