@@ -1,0 +1,21 @@
+apiVersion: terasky.demo/v1alpha1
+kind: ClusterBackupClaim
+metadata:
+  annotations:
+    terasky.backstage.io/add-to-catalog: "true"
+    terasky.backstage.io/owner: group:default/guests
+    terasky.backstage.io/system: sdf
+  name: sdf
+  namespace: sdf
+spec:
+  parameters:
+    awsAccount: scottnkjn
+    bucketName: demo-clusterbackupstack-01
+    cluster: gil-cls-01
+    region: us-east-1
+  compositeDeletePolicy: Background
+  writeConnectionSecretToRef:
+    name: sdf
+  compositionUpdatePolicy: Automatic
+  compositionRef:
+    name: clusterbackupstacks.terasky.demo
