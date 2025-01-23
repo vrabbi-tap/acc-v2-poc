@@ -1,0 +1,37 @@
+apiVersion: devopstoolkit.live/v1alpha1
+kind: AppClaim
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"cluster-scoped","basePath":"spectro-shared/asd/AppClaim"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/allcompany
+    terasky.backstage.io/system: asd
+    terasky.backstage.io/source-file-url: >-
+      https://github.com/vrabbi-tap/acc-v2-poc/blob/main/spectro-shared/asd/AppClaim/sdf.yaml
+  name: sdf
+  namespace: asd
+spec:
+  parameters:
+    ci:
+      enabled: true
+      buildImages: false
+      runTests: true
+    repository:
+      enabled: false
+    scaling:
+      enabled: true
+      max: 10
+      min: 1
+    db:
+      secret: sdfdsf
+    image: dfgdfg
+    namespace: sdfsdf
+    tag: dfg
+  id: sdf
+  compositeDeletePolicy: Background
+  writeConnectionSecretToRef:
+    name: sdf
+  compositionUpdatePolicy: Automatic
+  compositionRef:
+    name: app-frontend
