@@ -1,0 +1,15 @@
+apiVersion: terasky.demo/v1alpha1
+kind: ClusterBackupClaim
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"cluster-scoped","basePath":"kubetopus/hjhvnh/ClusterBackupClaim"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/aft-mgmt-lab-shahar
+    terasky.backstage.io/system: hjhvnh
+    terasky.backstage.io/source-file-url: >-
+      https://github.com/vrabbi-tap/acc-v2-poc/blob/main/kubetopus/hjhvnh/ClusterBackupClaim/jbhjhv.yaml
+  name: jbhjhv
+  namespace: hjhvnh
+spec:
+  compositeDeletePolicy: Foreground
