@@ -1,0 +1,20 @@
+apiVersion: terasky.demo/v1alpha1
+kind: ClusterBackupClaim
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"cluster-scoped","basePath":"kubetopus/demo-01/ClusterBackupClaim"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/acc-bnym
+    terasky.backstage.io/system: demo-01
+    terasky.backstage.io/source-file-url: >-
+      https://github.com/vrabbi-tap/acc-v2-poc/blob/main/kubetopus/demo-01/ClusterBackupClaim/demo-claim.yaml
+  name: demo-claim
+  namespace: demo-01
+spec:
+  parameters:
+    awsAccount: scott
+    bucketName: demo-01-asd
+    cluster: scott
+    region: us-east-1
+  compositeDeletePolicy: Background
