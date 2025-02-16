@@ -1,0 +1,18 @@
+apiVersion: demo.terasky.com/v1alpha1
+kind: PostgreSQLDatabase
+metadata:
+  annotations:
+    terasky.backstage.io/source-info: >-
+      {"pushToGit":true,"gitBranch":"main","gitRepo":"github.com?owner=vrabbi-tap&repo=acc-v2-poc","gitLayout":"cluster-scoped","basePath":"kubetopus/default/PostgreSQLDatabase"}
+    terasky.backstage.io/add-to-catalog: 'true'
+    terasky.backstage.io/owner: group:default/allcompany
+    terasky.backstage.io/system: default
+    terasky.backstage.io/source-file-url: >-
+      https://github.com/vrabbi-tap/acc-v2-poc/blob/main/kubetopus/default/PostgreSQLDatabase/cnpg-demo.yaml
+  name: cnpg-demo
+  namespace: default
+spec:
+  highAvailability: true
+  storageGB: 10
+  version: 16.4
+  compositeDeletePolicy: Background
